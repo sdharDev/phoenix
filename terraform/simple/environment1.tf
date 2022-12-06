@@ -591,6 +591,7 @@ output "PUBLIC_IP_STAGE" {
 
 output "instrumentation_key" {
   value = azurerm_application_insights.aksainsights.instrumentation_key
+  sensitive = true
 }
 
 output "AZURE_CONTAINER_REGISTRY_NAME" {
