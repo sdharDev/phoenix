@@ -423,13 +423,6 @@ resource "azurerm_kubernetes_cluster" "akstf" {
   dns_prefix          = var.dns_prefix
   # kubernetes_version  = var.kubernetes_version
   node_resource_group = "${azurerm_resource_group.aksrg.name}_nodes_${azurerm_resource_group.aksrg.location}"
-  linux_profile {
-    admin_username = "phoenix"
-
-    ssh_key {
-      key_data = file("${var.ssh_public_key}")
-    }
-  }
 
   default_node_pool {
     name               = "default"
